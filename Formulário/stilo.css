@@ -1,0 +1,363 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+* {
+	/* Remove a margem externa de todos os lados 
+	   do elemento.*/
+	margin: 0;
+
+	/* Remove o espaçamento interno de todos os 
+	   lados do elemento. */
+	padding: 0;
+
+	/* O preenchimento e a borda serão incluídos 
+	   na largura e na altura. */
+	box-sizing: border-box;
+
+	/* Define o tipo da fonte.*/
+	font-family: "Bebas Neue",sans-serif;
+}
+
+body {
+	/* Cor do elemento */
+	background-color: #6d51ff;
+
+	/*Torna o elemento um flex container, 
+	  transformando todos os seus elementos 
+	  internos (filhos) em flex itens.*/
+
+	display: flex;
+
+	/*Alinha os flex itens de acordo com o eixo 
+	  do container. */
+	align-items: center;
+
+	/*Alinha os itens flex no container de 
+	  acordo com a direção. */
+	justify-content: center;
+
+	/* Cor do elemento */
+	background-color: #6d51ff;
+
+}
+
+section {
+
+	background: #fff;
+
+	/*Gerar espaço ao redor do conteúdo do elemento
+	  30px superior e inferior
+	  5px para a esquerda e direita. */
+	padding: 30px 5px;
+
+	/* Arredonda cantos. */
+	border-radius: 10px;
+
+	/* Adiciona sombra nos elementos */
+	box-shadow: 5px 5px 15px;
+
+	/* Tamanho máximo do elemento*/
+    max-width: 100vw;
+    /* Tamanho minimo do elemento*/
+    min-width: 70vw;
+}
+
+section h1 {
+
+	padding: 30px 10px;
+    font-size: 50px;
+	text-align: center;
+    font-family:"Bebas Neue",sans-serif;
+
+}
+
+fieldset{
+	/* Remove a borda. */
+	border:none;
+
+    /* Adiciona margem na parte superior. */
+	padding-top: 10px;
+
+    width: 100%;
+	margin-top: 10px;
+	padding: 0px 10px;
+}
+fieldset:nth-child(3){
+
+    display: flex;
+    justify-content: space-between;
+
+}
+#CPF{
+    flex-grow: 1;
+}
+
+fieldset:nth-child(5){
+
+    display: flex;
+    justify-content: space-between;
+
+}
+#cell{
+    flex-grow: 1;
+}
+
+#fixo{
+    flex-grow: 1;
+}
+
+fieldset:nth-child(7){
+
+    display: flex;
+    justify-content: space-between;
+
+}
+#complemento{
+    flex-grow: 1;
+}
+
+.container input {
+    margin: 10px 10px;
+
+	/* Define a largura do elemento. */
+	width: calc(100% - 20px);
+
+	/* Defina a altura do elementos. */
+	height: 70px;
+
+	/* Remove a borda. */
+	border: none;
+
+	background-color: #ededed;
+	border-radius: 4px;
+	color: #333;
+
+	/* Tamanho da fonte.*/
+	font-size: 18px;
+
+	/* Aumenta a largura do contorno do texto.*/
+	font-weight: 700;
+
+	/* Gera espaço ao redor do conteúdo do elemento
+	   (superior, direito, inferior e esquerdo) */
+	padding: 14px 10px 0 10px;
+}
+
+.container select {
+    margin: 10px 10px;
+
+	/* Define a largura do elemento. */
+	width: calc(100% - 30px);
+
+	/* Defina a altura do elementos. */
+	height: 70px;
+
+	/* Remove a borda. */
+	border: none;
+
+	background-color: #ededed;
+	border-radius: 4px;
+	color: #333;
+
+	/* Tamanho da fonte.*/
+	font-size: 18px;
+
+	/* Aumenta a largura do contorno do texto.*/
+	font-weight: 700;
+
+	/* Gera espaço ao redor do conteúdo do elemento
+	   (superior, direito, inferior e esquerdo) */
+	padding: 14px 10px 0 10px;
+}
+
+.container {
+	/* Tipo de método de posicionamento de um elemento (estático, relativo, fixo, absoluto ou aderente)
+
+	/* Definido como relative, indica que está posicionado em relação à sua posição normal. 
+
+	Outro conteúdo não será ajustado para caber em qualquer lacuna deixada pelo elemento.*/
+
+	/* relative - indica que esta posicionado
+	   em relação à sua posição normal. */
+	position: relative;
+
+}
+.container label {
+	/* Tranforma o texto deixando todas as letras
+	   em maiúsculo. */
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: 700;
+	color: #9d9d9d;
+
+	/* Posiciona qualquer elemento de acordo com o 
+	   elemento pai, deixando de fazer parte do fluxo 
+	   comum do documento.*/
+	position: absolute;
+	
+	/* Defina a altura entre linha. */
+	line-height: 70px;
+
+	/* Posição vertical que necessita que o elemento 
+	   tenha uma posição determinada. */
+	top: -10px;
+
+	/* Distância da borda esquerda.*/
+	left: 20px;
+
+	/* Impede a seleção de texto.*/
+	user-select: none;
+
+	/* Se o elemento deve agir ou não a
+	   eventos do ponteiro. */
+	pointer-events: none;
+
+}
+
+.container input:focus ~ label,
+.container input:valid ~ label {
+
+    left: 20px;
+	top: -10px;
+	color: rgb(255, 165, 0);
+}
+
+#check {
+	width: 50%;
+	text-transform: uppercase;
+	font-size: 20px;
+	display: flex;
+}
+
+#check input{
+
+	/* Define a largura do elemento. */
+	width: 25px;
+
+	/* Defina a altura do elementos. */
+	height: 25px;
+
+	/* auto - Centraliza o elemento na horizontal.
+	   0 - Não altera a margem esquerda e direita. */
+	margin: auto 0;
+
+    margin-left: 10px;
+
+	/* Gera espaço ao redor do conteúdo do elemento
+	   (superior, direito, inferior e esquerdo) */
+	padding: 14px 60px 0px 10px;
+}
+
+#check label {
+
+	margin: auto 10px;
+
+	color: #555;
+	transition: 0.5s
+}
+
+#check input:checked ~ label,
+#check input:valid ~ label {
+	color: rgb(255, 165, 0);
+}
+
+button {
+	/*auto  - Centraliza horizontalmente 
+	  o elemento em seu conteiner.*/ 
+	margin: 40px 0;
+	margin-left: 10px;
+
+	/* Ocupar metade do fieldset descontando a 
+	   margin de 10px*/
+	width: calc(100% - 10px);
+	height: 70px;
+
+	background-color: rgb(255, 165, 0);
+	color: #555;
+	font-size: 25px;
+	border:none;
+	border-radius: 20px;
+
+	/* Muda o ponteiro do mouse.*/
+	cursor: pointer;
+
+	/* Linear - Mesma velocidade do início ao fim. */
+	transition: .3s linear;
+
+}
+
+button:hover {
+	/* Altera a transparência do elemento. */
+	opacity: 0.85;
+}
+
+form a {
+	/* Remove a decoração padrão do elemento
+	   Na tag a "link" remove o traço inferior. */
+	text-decoration: none;
+
+	font-size: 20px;
+	color: #555;
+	font-weight: 500;
+	padding-top: 20px;
+
+	text-transform: uppercase;
+
+	text-align: center;
+
+	/*Exibe o elemento em bloco. 
+	Ele começa em uma nova linha e ocupa toda a largura.*/
+	display: block;
+}
+
+form a:hover {
+	color: rgb(255, 165, 0);;
+}
+
+section img {
+	width: 50%;
+    margin-left: 250px;
+    background-color: rgb(255, 165, 0);
+
+}
+
+@media only screen and (max-width: 1080px) {
+	div#parallelogram {
+		height: 690px;
+	}
+
+	section img {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 510px) {
+	div#parallelogram {
+		display: none;
+	}
+
+	section {
+		min-width: 95vw;
+	}
+
+	form {
+		width: 100%;
+	}
+
+	fieldset:nth-child(3),
+	fieldset:nth-child(5),
+	fieldset:nth-child(7) {
+		flex-direction: column;
+	}
+
+	div#check {
+		width: 100%;
+	}
+
+	button {
+		width: 100%;
+		margin-left: 0;
+	}
+}
