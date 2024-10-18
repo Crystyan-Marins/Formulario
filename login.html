@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="icon" type="image/x-icon" href="img/ingresso.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<title>EventPass.com</title>
+</head>
+<body>
+	<div id="parallelogram"></div>
+	<section>
+		<form method="POST">
+			<div>
+				<h1>Olá!</h1>
+				<h2>Bem-vindo de volta!</h2>	
+		    </div>
+			<fieldset>
+				<div class="container">
+					<input required type="text" name="login" minlength="06" maxlength="06" onkeypress="verificaValor(event)">
+					<label for="login">Login</label>
+				</div>
+
+				<div class="container">
+					<input required type="password" name="password"  minlength="08" maxlength="08" onkeypress="verificaValor(event)">
+					<label for="password">Senha</label>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<div id="check">
+					<input type="checkbox"  name="lembrar">
+					<label>Mantenha-me conectado</label>
+				</div>
+
+				<div class="button">
+					<button id="btn_entrar" name="btn_entrar" onclick="entrar(event)">Entrar</button>
+					<button id="cadastrar" onclick="acessarCadastro(event)" name="cadastrar">Cadastre-se</button>
+			    </div>
+
+				<div>
+					<a id="clickaqui" href="#">Problemas no Acesso? "clique aqui!"</a>
+				</div>
+			</fieldset>
+			
+		</form>
+	</section>
+	<div id="toastBox">
+	</div>
+	<script type="text/javascript" src="js/login.js"></script>
+</body>
+</html>

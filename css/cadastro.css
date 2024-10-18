@@ -78,11 +78,13 @@ fieldset{
 	border:none;
 
     /* Adiciona margem na parte superior. */
-	padding-top: 10px;
-
+	padding-top: 0px;
+    
     width: 100%;
 	margin-top: 10px;
-	padding: 0px 10px;
+	padding: 0px 0px;
+
+
 }
 fieldset:nth-child(3){
 
@@ -91,7 +93,11 @@ fieldset:nth-child(3){
 
 }
 #CPF{
-    flex-grow: 1;
+	flex-grow: 1;
+
+}
+#nascimento{
+	width: calc(25% - 20px);
 }
 
 fieldset:nth-child(5){
@@ -149,7 +155,7 @@ fieldset:nth-child(7){
     margin: 10px 10px;
 
 	/* Define a largura do elemento. */
-	width: calc(100% - 30px);
+	width: calc(100% - 20px);
 
 	/* Defina a altura do elementos. */
 	height: 70px;

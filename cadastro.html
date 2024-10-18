@@ -5,20 +5,19 @@
 	<meta charset="utf-8">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="stylesheet" type="text/css" href="stilo.css">
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/cadastro.css">
+	<link rel="icon" type="image/x-icon" href="img/ingresso.png">
 	<title>Criar conta</title>
 </head>
 <body>
 	<section>
-		<img src="img-form.png" alt="User">
-
 		<form action="#" method="POST">
 			<h1>Crie sua conta</h1>
 			<fieldset>
 				<div class="container">
-					<input type="text" required name="name" minlength="15" maxlength="60" placeholder="Digite seu nome completo" autofocus>
+					<input type="text" required name="name" minlength="15" maxlength="60" placeholder="Digite seu nome completo" autofocus onkeypress="verificaValor(event)">
 					<label>Nome Completo:</label>
 				</div>
 
@@ -26,13 +25,13 @@
 		    <fieldset>
 
 				<div id="CPF" class="container">
-					<input type="number" required name="idcpf" placeholder="XXX.XXX.XXX-XX">
+					<input type="text" required name="idcpf" minlength="14" maxlength="14" placeholder="XXX.XXX.XXX-XX">
 					<label>CPF:</label>
 				</div>
 
 				<div class="container">
 						<label for="genero">Gênero:</label>
-						<select id="genero" name="genero" required placeholder="SExo">
+						<select id="genero" name="genero" required placeholder="SEXO">
 						  <option value="masculino">Masculino</option>
 						  <option value="feminino">Feminino</option>
 						  <option value="nao_binario">Não-binário</option>
@@ -42,16 +41,16 @@
 					  
 				</div>
 
-				<div class="container">
-					<input type="date" required name="iddatenascimento" placeholder="Sua data de nascimento">
-					<label>Data de Nascimento:</label>
+				<div id="nascimento" class="container">
+					<input type="date" id="data" required name="iddatenascimento">
+					<label for="data">Data de Nascimento:</label>
 				</div>
 
 			</fieldset>
 		    <fieldset>
 
 				<div class="container">
-					<input type="text" required name="idmae" placeholder="Digite o nome da sua mãe">
+					<input type="text" required name="idmae" placeholder="Digite o nome da sua mãe" onkeypress="verificaValor(event)">
 					<label>Nome Materno:</label>
 				</div>
 
@@ -59,12 +58,12 @@
 		    <fieldset>
 
 				<div id="cell" class="container">
-					<input type="number" required name="idcelular" placeholder="(+55) XX 9 XXXX-XXXX">
+					<input type="text" required name="idcelular" placeholder="+55 (XX) XXXXX-XXXX" onkeypress="verificaNumerico(event)">
 					<label>Telefone Celular:</label>
 				</div>
 
 				<div id="fixo" class="container">
-					<input type="number" required name="idtelefone" placeholder="(+55) XX-XXXX-XXXX">
+					<input type="text" required name="idtelefone" placeholder="+55 (XX) XXXX-XXXX" onkeypress="verificaNumerico(event)">
 					<label>Telefone Fixo:</label>
 				</div>
 
@@ -77,7 +76,7 @@
 				</div>
 
 				<div class="container">
-					<input type="text" required name="idendereço" placeholder="Digite seu Endereço ">
+					<input type="text" required name="idendereco" placeholder="Digite seu Endereço ">
 					<label>Endereço:</label>
 				</div>
 
@@ -85,7 +84,7 @@
 		    <fieldset>
 
 				<div class="container">
-					<input type="number" required name="idcep" placeholder="xx.xxx-xxx">
+					<input type="text" required id="idcep" name="idcep" placeholder="xx.xxx-xxx">
 					<label>CEP: </label>
 				</div>
 
@@ -95,7 +94,7 @@
 				</div>
 
 				<div id="complemento" class="container">
-					<input type="text" required name="idcomplemento" placeholder="Digite um ponto de referência">
+					<input type="text" name="idcomplemento" placeholder="Digite um ponto de referência">
 					<label>Complemento: </label>
 				</div>
 
@@ -103,17 +102,17 @@
 		    <fieldset>
 
 				<div class="container">
-					<input type="text" required name="idlogin" minlength="06" maxlength="06" placeholder="Digite um login">
+					<input type="text" required name="idlogin" minlength="06" maxlength="06" placeholder="Digite um login" onkeypress="verificaValor(event)">
 					<label>Login: </label>
 				</div>
 
 				<div class="container">
-					<input type="password" required name="password" minlength="08" maxlength="08" placeholder="Digite uma senha">
+					<input type="password" required name="password" minlength="08" maxlength="08" placeholder="Digite uma senha" onkeypress="verificaValor(event)">
 					<label>Senha:</label>
 				</div>
 
 				<div class="container">
-					<input type="password" required name="confirm" minlength="08" maxlength="08" placeholder="Confirme sua senha " >
+					<input type="password" required name="confirm" minlength="08" maxlength="08" placeholder="Confirme sua senha " onkeypress="verificaValor(event)" >
 					<label>Confirmar senha:</label>
 				</div>
 			</fieldset>
@@ -127,11 +126,12 @@
 			    <div>
 				<a href="#"> Ler termos de uso</a>
 			    </div>
-				<button name="submit">Criar conta</button>
+				<button name="submit" onclick="criarConta(event)">Criar conta</button>
 			</fieldset>
 
 		</form>
 	</section>
+	<script type="text/javascript" src="js/cadastro.js"></script>
 
 </body>
 </html>
